@@ -16,6 +16,8 @@ group :development, :test do
 	gem 'factory_girl_rails', '~> 4.0'
 end
 
+gem 'devise'
+
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'rails-assets-tether', '>= 1.3.3', source: 'https://rails-assets.org'
 
