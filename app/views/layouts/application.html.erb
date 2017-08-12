@@ -19,12 +19,12 @@
         <%= link_to "Philopedia", root_path, class: "navbar-brand" %>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <%= link_to "Home", root_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
+                <li class="nav-item active">
+                  <%= link_to "Home", root_path, class: "nav-link" %>
+                </li>
+                <li class="nav-item">
+                  <%= link_to "Articles", wikis_path, class: "nav-link" %>
+                </li>
           </ul>
           <span class="userStatus navbar-text">
             <% if user_signed_in? %>
