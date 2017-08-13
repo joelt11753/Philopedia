@@ -1,18 +1,19 @@
 require 'random_data'
 
-5.times do
+15.times do
 	User.create!(
-		email:    RandomData.random_email,
-		password: RandomData.random_sentence,
+		name:     Faker::LordOfTheRings.character,
+		email:    Faker::Internet.safe_email,
+		password: Faker::Internet.password,
 		role:     'standard'
 	)
 end
 
 users = User.all
 
-10.times do
+28.times do
 	Wiki.create!(
-		title:   RandomData.random_sentence,
+		title:   Faker::Hobbit.quote,
 		body:    RandomData.random_paragraph,
 		private: false,
 		user:    users.sample
@@ -20,6 +21,7 @@ users = User.all
 end
 
 User.create!(
+	name:     'Joel',
 	email:    'joel_tennant@yahoo.com',
 	password: 'testing',
 	role:     'admin'
