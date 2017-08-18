@@ -1,7 +1,11 @@
 .banner {
   text-align: center;
-  border-bottom: 1px solid #000;
   padding: 50px 0;
+  background-image: image_url("coffee_3.jpeg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 500px;
 }
 .title-primary {
   letter-spacing: 1px;
