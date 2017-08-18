@@ -1,6 +1,6 @@
 .banner {
   text-align: center;
-  padding: 50px 0;
+  padding: 15px 0;
   background-image: image_url("coffee_2.jpeg");
   background-repeat: no-repeat;
   background-position: center center;
@@ -9,9 +9,11 @@
 }
 .title-primary {
   letter-spacing: 1px;
-  margin-bottom: 25px;
+  margin-bottom: 8px;
+  font-size: 8rem;
 }
 
 .subTitle {
-  margin-bottom: 35px;
+  margin-bottom: 100px;
+  font-size: 2.5rem;
 }

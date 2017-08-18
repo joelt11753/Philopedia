@@ -12,32 +12,7 @@
   <div class="container-fluid">
     <!--NAV ROW-->
     <div class="row">
-      <nav class="navbar navbar-toggleable-md navbar-light bg-faded col-12">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <%= link_to "Philopedia", root_path, class: "navbar-brand" %>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <%= link_to "Home", root_path, class: "nav-link" %>
-                </li>
-                <li class="nav-item">
-                  <%= link_to "Articles", wikis_path, class: "nav-link" %>
-                </li>
-          </ul>
-          <span class="userStatus navbar-text">
-            <% if user_signed_in? %>
-                <strong><%= current_user.email %></strong> |
-                <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
-                - <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link' %>
-            <% else %>
-                <%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link' %> -
-                <%= link_to "Sign In", new_user_session_path, :class => 'navbar-link' %>
-            <% end %>
-          </span>
-        </div>
-      </nav>
+      <%= render partial: 'layouts/navbar' %>
     </div>
     <!--YIELD ROW-->
     <div class="row">
