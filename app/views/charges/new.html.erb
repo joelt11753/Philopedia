@@ -4,4 +4,4 @@
     <script class='stripe-button' src="https://checkout.stripe.com/checkout.js" data-key="<%= @stripe_btn_data[:key] %>" data-amount="<%= @stripe_btn_data[:amount] %>" data-description="<%= @stripe_btn_data[:description] %>"></script>
 <% end %>
 
-<%= link_to "Downgrade Account", downgrade_path, data: { confirm: "All of your private wiki's will be made public if you continue." }, :class => 'btn btn-danger' %>
+<%= render partial: 'downgrade' %>

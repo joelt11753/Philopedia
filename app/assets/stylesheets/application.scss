@@ -28,6 +28,20 @@
   color: #FFF;
 }
 
+.navbar .userStatus {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.navbar .userDropDown a {
+  color: #333;
+}
+
+.navbar .userDropDown a:hover {
+  color: #333;
+  text-decoration: underline;
+}
+
 .footer {
   padding-top: 25px;
 }
