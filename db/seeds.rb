@@ -21,7 +21,7 @@ users = User.all
 end
 
 User.create!(
-	name:     'Joel',
+	name:     'Joel Tennant',
 	email:    'joel_tennant@yahoo.com',
 	password: 'testing',
 	role:     'admin'

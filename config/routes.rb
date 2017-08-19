@@ -7,5 +7,8 @@ Rails.application.routes.draw do
 	get '/charges', to: 'charges#destroy', as: :downgrade
 
 	devise_for :users
+
+	get 'faq' => 'welcome#faq'
+
 	root 'welcome#index'
 end
