@@ -2,14 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.5'
 
-group :production do
-	gem 'rails_12factor'
-	gem 'pg', '~> 0.21'
-end
-
-group :development do
-	gem 'sqlite3'
-end
+gem 'rails_12factor'
+gem 'pg', '~> 0.21'
 
 group :development, :test do
 	gem 'rspec-rails', '~> 3.0'
