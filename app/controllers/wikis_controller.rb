@@ -3,6 +3,7 @@ class WikisController < ApplicationController
 
 	def index
 		@wikis = Wiki.all
+		@wikis = @wikis.public_wikis(@wikis)
 	end
 
 	def show

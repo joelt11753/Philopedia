@@ -33,7 +33,9 @@
             <p class="card-text">Premium users have all the benefits of the standard plan, but can create private
               articles and invite unlimited collaborators for each private article.</p>
             <div class="text-center">
-              <%= link_to "Go Premium! ($5 monthly)", new_charge_path, :class => 'btn btn-primary btn-lg' %>
+              <% if !current_user || current_user.standard? %>
+                  <%= link_to "Go Premium!", new_charge_path, :class => 'btn btn-primary btn-lg' %>
+              <% end %>
             </div>
           </div>
         </div>

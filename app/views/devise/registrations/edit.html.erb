@@ -3,12 +3,13 @@
 </h1>
 
 <p>Account Status: <%= current_user.role.capitalize %>
-  <% if current_user.standard? %>
-      <%= link_to 'Upgrade to Premium', new_charge_path %>
-  <% else %>
-      <%= render partial: 'charges/downgrade' %>
+  <% if !current_user.admin? %>>
+      <% if current_user.standard? %>
+          <%= link_to 'Upgrade to Premium', new_charge_path %>
+      <% else %>
+          <%= render partial: 'charges/downgrade' %>
+      <% end %>
   <% end %>
-
 </p>
 
 <h2>Edit Profile</h2>

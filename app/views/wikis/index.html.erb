@@ -1,10 +1,25 @@
-<div class="row">
-  <div class="col-12">
+<h1>Articles</h1>
+
+<% if current_user %>
+    <ul class="nav nav-tabs mt-4" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#home" role="tab">Public Articles</a>
+      </li>
+      <% if current_user.premium? || current_user.admin? %>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#private" role="tab">My Articles</a>
+          </li>
+      <% end %>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#collaborate" role="tab">Articles I Contribute Too</a>
+      </li>
+    </ul>
+<% end %>
+
+<div class="tab-content">
+  <div class="tab-pane active col-12 p-0" id="home" role="tabpanel">
     <div class="row">
-      <div class="col-6">
-        <h1>Articles</h1>
-      </div>
-      <div class="col-6">
+      <div class="col-12 pt-2">
         <%= link_to "New Wiki", new_wiki_path, class: "btn btn-success float-right" %>
       </div>
     </div>
@@ -18,4 +33,8 @@
         </div>
     <% end %>
   </div>
+  <% if current_user %>
+  <% end %>
 </div>
+
+
