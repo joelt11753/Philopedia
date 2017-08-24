@@ -14,16 +14,16 @@
         <a class="nav-link" data-toggle="tab" href="#collaborate" role="tab">Articles I Contribute To</a>
       </li>
     </ul>
-<% end %>
-
-<div class="tab-content">
-  <!-- Public Wiki's -->
-  <div class="tab-pane active col-12 p-0" id="home" role="tabpanel">
     <div class="row">
       <div class="col-12 pt-2 pb-2">
         <%= link_to "New Wiki", new_wiki_path, class: "btn btn-success float-right" %>
       </div>
     </div>
+<% end %>
+
+<div class="tab-content">
+  <!-- Public Wiki's -->
+  <div class="tab-pane active col-12 p-0" id="home" role="tabpanel">
     <% @wikis.each do |wiki| %>
         <div class="media">
           <div class="media-body">
@@ -38,7 +38,7 @@
   <div class="tab-pane col-12 p-0 pt-3" id="private" role="tabpanel">
     <h3>My Wiki's</h3>
   </div>
-  <%  %>
+  <% %>
   <div class="tab-pane col-12 p-0 pt-3" id="collaborate" role="tabpanel">
     <h3>Wiki's I contribute to</h3>
   </div>
