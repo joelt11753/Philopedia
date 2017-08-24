@@ -1,3 +1,5 @@
+![Philopedia](http://www.joeltennant.me/philo-header.png)
+
 # Philopedia
 
 Philopedia is a wiki for philosophy.  Articles for philosophers and philosophies can be created or edited by users who enjoy the study of Philosophy. Free users can create and edit public articles.  However, premium users can create private articles.  Other users can be added to these private articles and edit them as collaborators.
