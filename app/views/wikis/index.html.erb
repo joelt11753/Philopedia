@@ -1,29 +1,13 @@
-<h1>Articles</h1>
-
-<% if current_user %>
-    <ul class="nav nav-tabs mt-4" role="tablist">
-      <li class="nav-item">
-        <a class="nav-link active" data-toggle="tab" href="#home" role="tab">Public Articles</a>
-      </li>
-      <% if current_user.premium? || current_user.admin? %>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#private" role="tab">My Articles</a>
-          </li>
-      <% end %>
-      <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#collaborate" role="tab">Articles I Contribute To</a>
-      </li>
-    </ul>
+<div class="row">
+  <div class="col-12">
     <div class="row">
-      <div class="col-12 pt-2 pb-2">
+      <div class="col-6">
+        <h1>Articles</h1>
+      </div>
+      <div class="col-6">
         <%= link_to "New Wiki", new_wiki_path, class: "btn btn-success float-right" %>
       </div>
     </div>
-<% end %>
-
-<div class="tab-content">
-  <!-- Public Wiki's -->
-  <div class="tab-pane active col-12 p-0" id="home" role="tabpanel">
     <% @wikis.each do |wiki| %>
         <div class="media">
           <div class="media-body">
@@ -34,14 +18,4 @@
         </div>
     <% end %>
   </div>
-  <!-- Private Wiki's -->
-  <div class="tab-pane col-12 p-0 pt-3" id="private" role="tabpanel">
-    <h3>My Wiki's</h3>
-  </div>
-  <% %>
-  <div class="tab-pane col-12 p-0 pt-3" id="collaborate" role="tabpanel">
-    <h3>Wiki's I contribute to</h3>
-  </div>
 </div>
-
-
