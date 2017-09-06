@@ -20,7 +20,7 @@ Built on Ruby 4.2.5 using PostgresSQL and deployed on Heroku.
 * Figaro
 * pg (PostgresSQL)
 * Stripe
-* Bootstrap 4 beta
+* Bootstrap 4.0.0 Beta
 
 ## Getting Started
 
