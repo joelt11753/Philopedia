@@ -10,7 +10,7 @@ class WikiPolicy < ApplicationPolicy
 	end
 
 	def edit?
-    user_is_owner_of_record?
+		user_is_owner_of_record?
 	end
 
 	def show?
@@ -28,6 +28,6 @@ class WikiPolicy < ApplicationPolicy
 	private
 
 	def user_is_owner_of_record?
-		@user == @record.user
+		@user == @record || @user.admin?
 	end
 end
