@@ -28,6 +28,6 @@ class WikiPolicy < ApplicationPolicy
 	private
 
 	def user_is_owner_of_record?
-		@user == @record || @user.role == 'admin'
+		@user == @record
 	end
 end
