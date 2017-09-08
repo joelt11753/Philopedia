@@ -16,6 +16,16 @@ ActiveRecord::Schema.define(version: 20170813195054) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "collaborators", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "wiki_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "collaborators", ["user_id"], name: "index_collaborators_on_user_id", using: :btree
+  add_index "collaborators", ["wiki_id"], name: "index_collaborators_on_wiki_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
