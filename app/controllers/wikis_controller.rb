@@ -29,10 +29,7 @@ class WikisController < ApplicationController
 	end
 
 	def edit
-		@wiki          = Wiki.find(params[:id])
-		@users         = User.all
-		@get_wikis     = Collaborator.where(wiki_id: @wiki.id)
-		@collaborators = User.where(id: @get_wikis.pluck(:user_id))
+		@wiki = Wiki.find(params[:id])
 	end
 
 	def update
