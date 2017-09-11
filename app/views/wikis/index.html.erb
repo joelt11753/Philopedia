@@ -8,16 +8,6 @@
         <%= link_to "New Wiki", new_wiki_path, class: "btn btn-success float-right" if policy(:wiki).new? %>
       </div>
     </div>
-    <% @wikis.each do |wiki| %>
-        <% if policy(wiki).show? %>
-        <div class="media">
-          <div class="media-body">
-            <h4 class="media-heading">
-              <%= link_to wiki.title, wiki %>
-            </h4>
-          </div>
-        </div>
-        <% end %>
-    <% end %>
+    <%= render @policy_wikis %>
   </div>
 </div>
