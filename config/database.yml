@@ -8,13 +8,13 @@ default: &default
 
 development:
   <<: *default
-  database: philopedia_development
+  database: philopedia_db_development
 
 
 test:
   <<: *default
-  database: philopedia_test
+  database: philopedia_db_test
 
 production:
   <<: *default
-  database: philopedia_production
+  database: philopedia_db_production

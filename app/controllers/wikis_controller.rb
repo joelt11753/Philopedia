@@ -2,7 +2,7 @@ class WikisController < ApplicationController
 	before_action :authenticate_user!, except: [:index, :show]
 
 	def index
-		@wikis = Wiki.all
+		@policy_wikis = policy_scope(Wiki)
 	end
 
 	def show
@@ -29,7 +29,10 @@ class WikisController < ApplicationController
 	end
 
 	def edit
-		@wiki = Wiki.find(params[:id])
+		@wiki          = Wiki.find(params[:id])
+		@users         = User.all
+		@get_wikis     = Collaborator.where(wiki_id: @wiki.id)
+		@collaborators = User.where(id: @get_wikis.pluck(:user_id))
 	end
 
 	def update
