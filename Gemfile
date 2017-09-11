@@ -12,8 +12,7 @@ end
 
 gem 'devise'
 
-gem 'bootstrap', '~> 4.0.0.beta'
-
+gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'rails-assets-tether', '>= 1.3.3', source: 'https://rails-assets.org'
 
 gem 'sass-rails', '~> 5.0'

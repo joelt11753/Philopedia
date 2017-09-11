@@ -14,7 +14,7 @@ class WikiPolicy < ApplicationPolicy
 			elsif user.role == 'premium'
 				all_wikis = scope.all
 				all_wikis.each do |wiki|
-					if !wiki.private? || wiki.user == user || wiki.users.include?(user)
+					if wiki.public? || wiki.owner == user || wiki.collaborators.include?(user)
 						wikis << wiki
 					end
 				end
@@ -22,7 +22,7 @@ class WikiPolicy < ApplicationPolicy
 				all_wikis = scope.all
 				wikis     = []
 				all_wikis.each do |wiki|
-					if !wiki.private? || wiki.users.include?(user)
+					if wiki.public? || wiki.collaborators.include?(user)
 						wikis << wiki
 					end
 				end
@@ -39,6 +39,14 @@ class WikiPolicy < ApplicationPolicy
 		user_is_owner_of_record?
 	end
 
+	def show?
+		if @record.private?
+			user_is_owner_of_record?
+		else
+			true
+		end
+	end
+
 	def destroy?
 		user_is_owner_of_record?
 	end
@@ -46,10 +54,6 @@ class WikiPolicy < ApplicationPolicy
 	private
 
 	def user_is_owner_of_record?
-		false
-
-		if @user
-			@user == @record || @user.admin?
-		end
+		@user == @record || @user.admin?
 	end
 end
